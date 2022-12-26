@@ -1,0 +1,17 @@
+exec: bash -c '/opt/bitnami/scripts/discourse/entrypoint.sh /opt/bitnami/scripts/discourse/run.sh'
+after:
+  - postgresql
+  - redis
+env:
+  ALLOW_EMPTY_PASSWORD: yes
+  DISCOURSE_HOST: localhost
+  POSTGRESQL_HOST: localhost
+  DISCOURSE_DATABASE_HOST: localhost
+  DISCOURSE_DATABASE_PORT_NUMBER: 5432
+  DISCOURSE_DATABASE_USER: bn_discourse
+  DISCOURSE_DATABASE_NAME: bitnami_discourse
+  DISCOURSE_REDIS_HOST: localhost
+  DISCOURSE_REDIS_PORT_NUMBER: 6379
+  POSTGRESQL_CLIENT_POSTGRES_USER: postgres
+  POSTGRESQL_CLIENT_CREATE_DATABASE_NAME: bitnami_discourse
+  POSTGRESQL_CLIENT_CREATE_DATABASE_EXTENSIONS: hstore,pg_trgm
