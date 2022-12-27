@@ -2,11 +2,7 @@ exec: bash -c '/opt/bitnami/scripts/discourse/entrypoint.sh /opt/bitnami/scripts
 after:
   - discourse
 env:
-  ALLOW_EMPTY_PASSWORD: yes
-  DISCOURSE_HOST: localhost
   DISCOURSE_DATABASE_HOST: localhost
-  DISCOURSE_DATABASE_PORT_NUMBER: 5432
   DISCOURSE_DATABASE_USER: bn_discourse
   DISCOURSE_DATABASE_NAME: bitnami_discourse
   DISCOURSE_REDIS_HOST: localhost
-  DISCOURSE_REDIS_PORT_NUMBER: 6379

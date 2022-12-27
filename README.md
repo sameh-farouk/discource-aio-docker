@@ -19,8 +19,8 @@ this repo forked from Bitnami image [Docker Hub Registry](https://hub.docker.com
 ## How to build and use this image
 
 ```bash
-docker build -t tf_discourse_aio:latest .
-docker run -p 80:3000 tf_discourse_aio:latest
+docker build -t tf-discourse-aio:latest .
+docker run --name tf-discourse -p 80:3000 --env-file flist.env tf-discourse-aio:latest
 ```
 
 Access your application at `http://localhost/`
@@ -53,11 +53,11 @@ When you start the Discourse image, you can adjust the configuration of the inst
 - For manual execution add a `--env` option with each variable and value:
 
     ```console
-    $ docker run -d --name tf_discourse_aio -p 80:3000 \
+    $ docker run -d --name tf-discourse-aio -p 80:3000 \
       --env DISCOURSE_PASSWORD=my_password \
       --network discourse-tier \
       --volume /path/to/discourse-persistence:/bitnami \
-      threefolddev/discourse_aio:latest
+      threefolddev/discourse-aio:latest
     ```
 
 Available environment variables:

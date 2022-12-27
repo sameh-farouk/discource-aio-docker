@@ -1,4 +1,2 @@
 exec: bash -c '/opt/bitnami/scripts/redis/entrypoint.sh /opt/bitnami/scripts/redis/run.sh'
 test: bash -c 'redis-cli ping &>/dev/null'
-env:
-  ALLOW_EMPTY_PASSWORD: yes
