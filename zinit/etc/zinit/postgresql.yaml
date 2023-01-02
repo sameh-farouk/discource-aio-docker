@@ -1,5 +1,6 @@
 exec: bash -c '/opt/bitnami/scripts/postgresql/entrypoint.sh /opt/bitnami/scripts/postgresql/run.sh'
 test: bash -c 'pg_isready -U postgres -h localhost &>/dev/null'
 env:
-  POSTGRESQL_USERNAME: postgres
+  ALLOW_EMPTY_PASSWORD: yes
+  POSTGRESQL_USERNAME: bn_discourse
   POSTGRESQL_DATABASE: bitnami_discourse

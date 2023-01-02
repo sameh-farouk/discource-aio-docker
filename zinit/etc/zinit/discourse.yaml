@@ -3,6 +3,7 @@ after:
   - postgresql
   - redis
 env:
+  ALLOW_EMPTY_PASSWORD: yes
   POSTGRESQL_HOST: localhost
   DISCOURSE_DATABASE_HOST: localhost
   DISCOURSE_DATABASE_USER: bn_discourse

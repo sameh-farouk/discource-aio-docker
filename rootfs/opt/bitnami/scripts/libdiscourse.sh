@@ -385,12 +385,10 @@ discourse_rake_execute() {
 #   None
 #########################
 discourse_console_execute() {
-    local rails_cmd
-    rails_cmd="$(</dev/stdin)"
-    debug "Executing script with console environment:\n${rails_cmd}"
+    debug "Executing script with console environment:\n cat"
     discourse_bundle_execute ruby -e "$(cat <<EOF
 require File.expand_path("/opt/bitnami/discourse/config/environment", __FILE__)
-${rails_cmd}
+$(cat)
 EOF
     )"
 }
