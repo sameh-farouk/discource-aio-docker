@@ -21,7 +21,7 @@ RUN mkdir -p /tmp/bitnami/pkg/cache && cd /tmp/bitnami/pkg/cache/ && \
     COMPONENTS=( \
       "python-3.8.16-0-linux-${OS_ARCH}-debian-11" \
       "wait-for-port-1.0.5-1-linux-${OS_ARCH}-debian-11" \
-      "ruby-2.7.6-0-linux-${OS_ARCH}-debian-11" \
+      "ruby-2.7.7-0-linux-${OS_ARCH}-debian-11" \
       "postgresql-client-15.1.0-0-linux-${OS_ARCH}-debian-11" \
       "node-14.21.2-0-linux-${OS_ARCH}-debian-11" \
       "brotli-1.0.9-154-linux-${OS_ARCH}-debian-11" \
