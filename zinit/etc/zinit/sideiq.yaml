@@ -6,3 +6,4 @@ env:
   DISCOURSE_DATABASE_USER: bn_discourse
   DISCOURSE_DATABASE_NAME: bitnami_discourse
   DISCOURSE_REDIS_HOST: localhost
+  DISCOURSE_ENABLE_HTTPS: yes
