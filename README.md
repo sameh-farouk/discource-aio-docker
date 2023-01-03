@@ -83,6 +83,13 @@ Available environment variables:
 - `DISCOURSE_ENABLE_CONF_PERSISTENCE`: Whether to enable persistence of the Discourse `discourse.conf` configuration file. Default: **no**
 - `DISCOURSE_SKIP_BOOTSTRAP`: Whether to skip performing the initial bootstrapping for the application. This is necessary in case you use a database that already has Discourse data. Default: **no**
 
+##### Passenger configuration
+This environment variable changes Passenger Standalone's behavior
+see [here](https://www.phusionpassenger.com/library/config/standalone/reference/) for full Passenger config reference.
+- `PASSENGER_COMPILE_NATIVE_SUPPORT_BINARY` : Allow compiling Passenger Native Support if binaries wasn't found. make sure `libz-dev` is installed otherwise compiling may fail. Default: **1**
+- `PASSENGER_DOWNLOAD_NATIVE_SUPPORT_BINARY` : Allow downloading Passenger Native Support if binaries wasn't found. Default: **1**
+- `PASSENGER_ADDRESS`: Instructs Passenger to listen for requests on the given IP address. This means that Passenger will only be able to accept requests that are sent to that IP address. Default: **0.0.0.0**
+- `PASSENGER_LOG_LEVEL` : Allows one to specify how much information Passenger should write to the log file. A higher log level value means that more information will be logged. Possible values are: `0` to `7`. Default: **3**
 ##### Database connection configuration
 
 - `DISCOURSE_DATABASE_HOST`: Hostname for PostgreSQL server. Default: **postgresql**
@@ -211,3 +218,7 @@ $ zinit log discourse
 ### Backing up your container
 
 To backup your data, make a copy of `/bitnami/discourse`, `/bitnami/redis`, `/bitnami/postgresql`
+
+### Restarting Discourse on Passenger Standalone
+
+Passenger supplies several ways to restart an application that is running in Passenger. This [guide](https://www.phusionpassenger.com/library/admin/standalone/restart_app.html) explains how you can restart applications on Passenger.
